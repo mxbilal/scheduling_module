@@ -1,0 +1,13 @@
+.horizontal-check-box {
+  flex-direction: row !important;
+}
+
+.MuiTypography-body1 {
+  min-width: 30%;
+}
+
+.fae--check-box-group {
+  // @include flex(flex-start, flex-start);
+
+  flex-direction: column;
+}
