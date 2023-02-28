@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
@@ -59,7 +59,29 @@ export default function TimeSlot() {
   const handleAddTimeRange = () => {
     setTimeRanges([...timeRanges, { startTime: "09:00", endTime: "17:00" }]);
   };
-
+  console.log(location);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://schedulingapi-preprod.findanexpert.net/api/Schedule/GetAllScheduleById?Id=233",
+  //     {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         mode: "no-cors",
+  //       },
+  //     }
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       let newData = data?.monthlyScheduleResponseModels.filter(
+  //         (a) => a.dates === startTime
+  //       );
+  //       console.log(newData);
+  //       if (newData.length > 0) setTimeRanges(newData[0].timeSlots);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, []);
   const handleTimeRangeChange = (index, newTimeRange) => {
     const newTimeRanges = [...timeRanges];
     newTimeRanges[index] = newTimeRange;
